@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="icon-d_7.png" type="image/x-icon" />
+		<title>Sam Aleks' Website</title>
+		<link
+			href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/content-styles.css" />
+
+		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				var stickyNav = document.querySelector("main > nav");
+
+				function updateStickyNav() {
+					var containerHeight = stickyNav.parentElement.clientHeight;
+
+					var scrollPosition = window.scrollY;
+					var pageHeight =
+						document.documentElement.scrollHeight -
+						window.innerHeight;
+					var percentage = (scrollPosition / pageHeight) * 150;
+
+					// Calculate values based on container dimensions
+					var inMin = 25;
+					var inMax = 100;
+					var outMin = 100;
+					var outMax = 0;
+
+					// Adjust values based on container width
+					inMin *= containerHeight / 10000; // Adjust the base value as needed
+					inMax *= containerHeight / 10000; // Adjust the base value as needed
+
+					outMin *= containerHeight / 4000; // Adjust the base value as needed
+					outMax *= containerHeight / 1000; // Adjust the base value as needed
+
+					var newPosition = map(
+						percentage,
+						inMin,
+						inMax,
+						outMin,
+						outMax
+					);
+					stickyNav.style.top = newPosition + "px";
+				}
+
+				window.addEventListener("scroll", updateStickyNav);
+				window.addEventListener("resize", updateStickyNav);
+
+				// Function to map values from one range to another
+				function map(value, inMin, inMax, outMin, outMax) {
+					return (
+						((value - inMin) * (outMax - outMin)) /
+							(inMax - inMin) +
+						outMin
+					);
+				}
+
+				// Initial update
+				updateStickyNav();
+			});
+		</script>
+	</head>
+	<body data-scroll-container>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+				<div class="container center-container">
+					<div id="white-bar" class="navbar-white-bar"></div>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarNav"
+						aria-controls="navbarNav"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="index.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>Projects</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="languages.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>Languages</a
+								>
+							</li>
+							<li class="nav-item active">
+								<a
+									class="nav-link active"
+									href="experience.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>Work History</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="about.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>About</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="github.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>Github</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<script src="js/white-bar.js"></script>
+			<script src="js/header-visibility.js"></script>
+			<script src="js/scripts.js"></script>
+			<div id="text-content">
+				<section id="work-experience">
+					<h1>Work Experience</h1>
+					<p>
+						<i>[Website Currently Under Active Development]</i>
+					</p>
+				</section>
+				<section id="job1">
+					<h3>2015-2016 | Sever's Corn Maze and Fall Festival</h3>
+					<h4>Farm Hand/Laborer/Festival Worker</h4>
+					<p>
+						Between the ages of 12 and 14, I got the opportunity to
+						earn money officially at a real job. In the Spring and
+						Summer months I helped hoe the fields from weeds and
+						harvest pumpkins, while in the Fall I assisted at the
+						Fall Festival. There I primarily worked at the parking
+						lot, cleaned the walking areas, and removed weeds from
+						the Maze. Although this job has little to do with my
+						current work interests, I personally think having a job
+						at that young of an age molded me to value work and
+						money as well as improving my ability to communicate
+						with others in a professional manner.
+					</p>
+				</section>
+				<section id="job2">
+					<h3>2019 | Oakman Construction</h3>
+					<h4>Construction Assistant</h4>
+					<p>
+						Similar to my time with Sever's, I worked primarily
+						physically, helping dig holes for cement, mixing that
+						cement, helping build or refurbish decks, and other jobs
+						that pertain to the field of residential contracting. I
+						see this time as being quite valuable for shaping my
+						ability to work long hours and improve my communication
+						skills.
+					</p>
+				</section>
+				<section id="job3">
+					<h3>2019-2021 | Fleet Farm</h3>
+					<h4>Sales Floor Representative</h4>
+					<p>
+						At Fleet Farm much of my experience from previous jobs
+						carried over, primarily the ability to lift heavy items
+						and to professionally communicate with others. A lot of
+						my work consisted of assessing the scope of work for the
+						day, communicating what I planned on doing to help
+						accomplish our goals for our department, department
+						mastery and memorization, and constant priority
+						evaluation. Satisfying the needs of our patrons was also
+						necessary, many time working with them to solve their
+						problem rather than simply locating the item for which
+						they initially came for. Priority evaluation was also
+						critical because at any given time there were multiple
+						genuinely important jobs that could be done, and the
+						focus needed to be given to the most critical jobs
+						first. Similarly to the previously listed jobs, my
+						communications skills vastly improved, as well as
+						problem solving, interpersonal communication, customer
+						service, and time management.
+					</p>
+				</section>
+				<section id="job4">
+					<h3>2022-Present | Uber, Roadie, DoorDash</h3>
+					<h4>Freelance Delivery Driver</h4>
+					<p>
+						Currently I work as a freelance delivery driver,
+						primarily to maintain income while being able to help my
+						family with remodeling, moving, as well as volunteering
+						at my church. This job is intentionally temporary, and
+						is being held to increase my flexibility prior to
+						getting a permanent position.
+					</p>
+				</section>
+			</div>
+			<nav class="section-nav">
+				<ol>
+					<li>
+						<a href="#work-experience"
+							><h2><b>Work Experience</b></h2>
+						</a>
+						<ul>
+							<li><a href="#job1">Sever's Fall Festival</a></li>
+							<li><a href="#job2">Oakman Construction</a></li>
+							<li><a href="#job3">Fleet Farm</a></li>
+							<li><a href="#job4">Freelance Delivery</a></li>
+						</ul>
+					</li>
+				</ol>
+			</nav>
+		</main>
+	</body>
+</html>

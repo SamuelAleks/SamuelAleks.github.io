@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="icon-d_7.png" type="image/x-icon" />
+		<title>Sam Aleks' Website</title>
+		<link
+			href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/content-styles.css" />
+
+		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				var stickyNav = document.querySelector("main > nav");
+
+				function updateStickyNav() {
+					var containerHeight = stickyNav.parentElement.clientHeight;
+
+					var scrollPosition = window.scrollY;
+					var pageHeight =
+						document.documentElement.scrollHeight -
+						window.innerHeight;
+					var percentage = (scrollPosition / pageHeight) * 150;
+
+					// Calculate values based on container dimensions
+					var inMin = 25;
+					var inMax = 100;
+					var outMin = 100;
+					var outMax = 0;
+
+					// Adjust values based on container width
+					inMin *= containerHeight / 10000; // Adjust the base value as needed
+					inMax *= containerHeight / 10000; // Adjust the base value as needed
+
+					outMin *= containerHeight / 4000; // Adjust the base value as needed
+					outMax *= containerHeight / 1000; // Adjust the base value as needed
+
+					var newPosition = map(
+						percentage,
+						inMin,
+						inMax,
+						outMin,
+						outMax
+					);
+					stickyNav.style.top = newPosition + "px";
+				}
+
+				window.addEventListener("scroll", updateStickyNav);
+				window.addEventListener("resize", updateStickyNav);
+
+				// Function to map values from one range to another
+				function map(value, inMin, inMax, outMin, outMax) {
+					return (
+						((value - inMin) * (outMax - outMin)) /
+							(inMax - inMin) +
+						outMin
+					);
+				}
+
+				// Initial update
+				updateStickyNav();
+			});
+		</script>
+	</head>
+	<body data-scroll-container>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+				<div class="container center-container">
+					<div id="white-bar" class="navbar-white-bar"></div>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarNav"
+						aria-controls="navbarNav"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="index.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>Projects</a
+								>
+							</li>
+							<li class="nav-item active">
+								<a
+									class="nav-link active"
+									href="languages.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>Languages</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="experience.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>Work History</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="about.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>About</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="github.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>Github</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<script src="js/white-bar.js"></script>
+			<script src="js/header-visibility.js"></script>
+			<script src="js/scripts.js"></script>
+			<div id="text-content">
+				<section id="top-of-the-page">
+					<h1>Languages</h1>
+				</section>
+
+				<section id="programming-list">
+					<section id="python">
+						<h3>
+							<img
+								src="./img/Language Logos/python-logo.png"
+								alt="Python Logo"
+								class="logo-image"
+							/>
+							Python
+						</h3>
+						<h4><b>10/10</b> - Very Confident</h4>
+						<p>
+							Aside from proprietary and introductory programming
+							frameworks, python was my first introduction to
+							proper programming. I have programmed quite a few
+							simple programs over the years, and my most recent
+							project includes a GUI along with inter-software
+							interaction.
+						</p>
+					</section>
+
+					<section id="java">
+						<h3>
+							<img
+								src="./img/Language Logos/java-logo.png"
+								alt="Java Logo"
+								class="logo-image"
+							/>
+							Java
+						</h3>
+						<h4><b>10/10</b> - Very Confident</h4>
+						<p>
+							Being quite a popular and well-known program
+							generally, it is no surprise that java was one of
+							the primary programing languages that was taught
+							during my college and university education.
+						</p>
+					</section>
+
+					<section id="cpp">
+						<h3>
+							<img
+								src="./img/Language Logos/cpp-logo.png"
+								alt="C++ Logo"
+								class="logo-image"
+							/>C++
+						</h3>
+						<h4><b>6/10</b> - Fairly Confident</h4>
+						<p>
+							I was first introduced to C++ in College. Although I
+							have heard of it before, I mentally relegated its
+							use to only low-level electronics. Over the years I
+							have realized the benefits and possibilities of C++
+							both in increasing program efficiency and a gain of
+							control over the lower-level components of program
+							execution.
+						</p>
+					</section>
+					<section id="sql">
+						<h3>
+							<img
+								src="./img/Language Logos/sql-logo.png"
+								alt="SQL Logo"
+								class="logo-image"
+							/>
+							SQL
+						</h3>
+						<h4><b>10/10</b> - Very Confident</h4>
+						<p>
+							SQL has been a staple of my database querying.
+							Whether it is MySQL, IMBi, or MariaDB, I have quite
+							a bit of proficiency in SQL.
+						</p>
+					</section>
+					<section id="bash">
+						<h3>
+							<img
+								src="./img/Language Logos/bash-logo.png"
+								alt="BASH Logo"
+								class="logo-image"
+							/>
+							Bash
+						</h3>
+						<h4><b>6/10</b> - Fairly Confident</h4>
+						<p>
+							Some may argue that Bash itself is not a programming
+							language, however it still takes skill to create
+							scripts for bash. Over the years I have interacted
+							with, and created scripts for the Bash Shell.
+							Although nowadays, I use ZSH on my personal desktop,
+							the scripting language is still the same.
+						</p>
+					</section>
+					<section id="html">
+						<h3>
+							<img
+								src="./img/Language Logos/html-logo.png"
+								alt="HTML Logo"
+								class="logo-image"
+							/>HTML
+						</h3>
+						<h4><b>10/10</b> - Very Confident</h4>
+						<p>
+							HTML has been a staple of web development even since
+							it's release, and the same could be said for my use
+							of HTML as well. As it is well, known, HTML is the
+							primary markup language of the web, and is what I
+							used to create this website. I have designed
+							numerous pages over the years utilizing HTML, and
+							and quite confident in most of its features.
+						</p>
+					</section>
+					<section id="css">
+						<h3>
+							<img
+								src="./img/Language Logos/css-logo.png"
+								alt="CSS Logo"
+								class="logo-image"
+							/>CSS
+						</h3>
+						<h4><b>10/10</b> - Very Confident</h4>
+						<p>
+							Similarly to HTML, CSS is not a full scripting
+							language, however, you just as much cannot escape
+							its ubiquitous use within the web. For most of my
+							time using CSS, I have used plain CSS, however,
+							recently I have been taking advantage of some CSS
+							frameworks to speed up my workflow. Namely,
+							bootstrap, although I still prefer the
+							customizability that raw CSS provides.
+						</p>
+					</section>
+					<section id="javascript">
+						<h3>
+							<img
+								src="./img/Language Logos/javascript-logo.png"
+								alt="JavaScript Logo"
+								class="logo-image"
+							/>Javascript
+						</h3>
+						<h4><b>7/10</b> - Confident</h4>
+						<p>
+							Javascript is quite a powerful language that allows
+							one to extends their website. I have used and am
+							currently using JavaScript in order to provide
+							features and design improvements that would
+							otherwise being impossible with plain HTML and CSS
+						</p>
+					</section>
+					<section id="php">
+						<h3>
+							<img
+								src="./img/Language Logos/php-logo.png"
+								alt="PHP Logo"
+								class="logo-image"
+							/>PHP
+						</h3>
+						<h4><b>5/10</b> - Fairly Confident</h4>
+						<p>
+							Being quite a prolific language in the server-side
+							of things, I also use PHP for it's template
+							fucntionality and as a database to frontend
+							communication layer.
+						</p>
+					</section>
+					<section id="ARMv7">
+						<h3>
+							<img
+								src="./img/Language Logos/assembly-logo.png"
+								alt="ARMv7 Assembly Logo"
+								class="logo-image"
+							/>ARMv7 Assembly
+						</h3>
+						<h4><b>3/10</b> - Getting Started</h4>
+						<p>
+							Assembly, although quite difficult, is a language
+							that I have some familiarity with. The reason I
+							specify ARMv7 Assembly is because I programming in
+							assembly on my Raspberry Pib qwedwaqeawed asd asd
+							asd
+						</p>
+					</section>
+					<section id="fortran">
+						<h3>
+							<img
+								src="./img/Language Logos/fortran-logo.png"
+								alt="Fortran Logo"
+								class="logo-image"
+							/>Fortran
+						</h3>
+						<h4><b>2/10</b> - Hello World</h4>
+						<p>
+							As part of an in-class research project, I had the
+							honor to cover the FORTRAN Language. From that
+							research I grew a fondeness for it's capabilities
+							and it's relatively modern additions. Going in to it
+							I expected an old language that was hard to
+							understand, but I realized that it is a much more
+							readable language than a lot that I have experience
+							with.
+						</p>
+					</section>
+
+					<section id="csharp">
+						<h3>
+							<img
+								src="./img/Language Logos/csharp-logo.png"
+								alt="C# Logo"
+								class="logo-image"
+							/>c#
+						</h3>
+						<h4><b>4/10</b> - Getting Started</h4>
+						<p>
+							I hava a limited but existing knowledge of C#. I
+							have not really had a reason over the years to
+							utlize C# for my projects, but I have created a few
+							simple projects with it and am still rather
+							confident in it due to its similarity to other
+							programming languages.
+						</p>
+					</section>
+					<section id="rust">
+						<h3>
+							<img
+								src="./img/Language Logos/rust-logo.png"
+								alt="Rust Logo"
+								class="logo-image"
+							/>Rust
+						</h3>
+						<h4><b>5/10</b> - Fairly Confident</h4>
+						<p>
+							After some projects in C++, I learned that Rust was
+							a very similar language but with the added benefit
+							of memory safety. This intrigued me, causing me to
+							apply Rust to a few simple programs.
+						</p>
+					</section>
+				</section>
+
+				<section id="programming-list">
+					<section id="python">
+						<h3>
+							<img
+								src="./img/Language Logos/html-logo.png"
+								alt="Python Logo"
+								class="logo-image"
+							/>
+							Personal Website Frontend
+						</h3>
+						<p>
+							Aside from proprietary and introductory programming
+							frameworks, python was my first introduction to
+							proper programming. I have programmed quite a few
+							simple programs over the years, and my most recent
+							project includes a GUI along with inter-software
+							interaction.
+						</p>
+					</section>
+
+					<section id="php">
+						<h3>
+							<img
+								src="./img/Language Logos/php-logo.png"
+								alt="Java Logo"
+								class="logo-image"
+							/>
+							Personal Website Backend
+						</h3>
+						<p>
+							Being quite a popular and well-known program
+							generally, it is no surprise that java was one of
+							the primary programing languages that was taught
+							during my college and university education.
+						</p>
+					</section>
+
+					<section id="cpp">
+						<h3>
+							<img
+								src="./img/Language Logos/sql-logo.png"
+								alt="C++ Logo"
+								class="logo-image"
+							/>Personal Email
+						</h3>
+						<p>
+							I was first introduced to C++ in College. Although I
+							have heard of it before, I mentally relegated its
+							use to only low-level electronics. Over the years I
+							have realized the benefits and possibilities of C++
+							both in increasing program efficiency and a gain of
+							control over the lower-level components of program
+							execution.
+						</p>
+					</section>
+					<section id="sql">
+						<h3>
+							<img
+								src="./img/Language Logos/python-logo.png"
+								alt="SQL Logo"
+								class="logo-image"
+							/>
+							Whisper AI Frontend
+						</h3>
+						<p>
+							SQL has been a staple of my database querying.
+							Whether it is MySQL, IMBi, or MariaDB, I have quite
+							a bit of proficiency in SQL.
+						</p>
+					</section>
+
+					<section id="bash">
+						<h3>
+							<img
+								src="./img/Language Logos/bash-logo.png"
+								alt="BASH Logo"
+								class="logo-image"
+							/>
+							BERT-Based Programming Completion
+						</h3>
+						<p>
+							Some may argue that Bash itself is not a programming
+							language, however it still takes skill to create
+							</p>
+							</section>
+							
+			</div>
+			<nav class="section-nav">
+				<ol>
+					
+					<li>
+						<a href="#programming-introduction"
+							><h2><b>Programming Languages</b></h2></a
+						>
+						<ul>
+							<li><a href="#python">Python</a></li>
+							<li><a href="#java">Java</a></li>
+							<li><a href="#cpp">C++</a></li>
+							<li><a href="#sql">SQL</a></li>
+							<li><a href="#bash">Bash</a></li>
+							<li><a href="#html">HTML</a></li>
+							<li><a href="#css">CSS</a></li>
+							<li><a href="#javascript">JavaScript</a></li>
+							<li><a href="#php">PHP</a></li>
+							<li><a href="#ARMv7">ARMv7 Assembly</a></li>
+							<li><a href="#fortran">FORTRAN</a></li>
+							<li><a href="#csharp">C#</a></li>
+							<li><a href="#rust">Rust</a></li>
+						</ul>
+					</li>
+					
+				</ol>
+			</nav>
+		</main>
+	</body>
+</html>

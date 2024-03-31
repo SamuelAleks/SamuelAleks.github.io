@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="icon-d_7.png" type="image/x-icon" />
+		<title>Sam Aleks' Website</title>
+		<link
+			href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/content-styles.css" />
+
+		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				var stickyNav = document.querySelector("main > nav");
+
+				function updateStickyNav() {
+					var containerHeight = stickyNav.parentElement.clientHeight;
+
+					var scrollPosition = window.scrollY;
+					var pageHeight =
+						document.documentElement.scrollHeight -
+						window.innerHeight;
+					var percentage = (scrollPosition / pageHeight) * 150;
+
+					// Calculate values based on container dimensions
+					var inMin = 25;
+					var inMax = 100;
+					var outMin = 100;
+					var outMax = 0;
+
+					// Adjust values based on container width
+					inMin *= containerHeight / 10000; // Adjust the base value as needed
+					inMax *= containerHeight / 10000; // Adjust the base value as needed
+
+					outMin *= containerHeight / 4000; // Adjust the base value as needed
+					outMax *= containerHeight / 1000; // Adjust the base value as needed
+
+					var newPosition = map(
+						percentage,
+						inMin,
+						inMax,
+						outMin,
+						outMax
+					);
+					stickyNav.style.top = newPosition + "px";
+				}
+
+				window.addEventListener("scroll", updateStickyNav);
+				window.addEventListener("resize", updateStickyNav);
+
+				// Function to map values from one range to another
+				function map(value, inMin, inMax, outMin, outMax) {
+					return (
+						((value - inMin) * (outMax - outMin)) /
+							(inMax - inMin) +
+						outMin
+					);
+				}
+
+				// Initial update
+				updateStickyNav();
+			});
+		</script>
+	</head>
+	<body data-scroll-container>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+				<div class="container center-container">
+					<div id="white-bar" class="navbar-white-bar"></div>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarNav"
+						aria-controls="navbarNav"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="index.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>Projects</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="languages.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>Languages</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="experience.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>Work History</a
+								>
+							</li>
+							<li class="nav-item active">
+								<a
+									class="nav-link active"
+									href="about.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>About</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="github.html"
+									onmouseover="expandWhiteBar(this)"
+									onmouseout="resetWhiteBar()"
+									>Github</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<script src="js/white-bar.js"></script>
+			<script src="js/header-visibility.js"></script>
+			<script src="js/scripts.js"></script>
+			<div id="text-content">
+				<section id="top-of-the-page">
+					<h1>Brief Introduction</h1>
+				</section>
+				<section id="introduction">
+					<h2>Introduction</h2>
+					<p>
+						<i>[Website Currently Under Active Development]</i>
+					</p>
+				</section>
+				<section id="early-life">
+					<h2>Early Life</h2>
+					<p>
+						<i>[Website Currently Under Active Development]</i>
+					</p>
+				</section>
+				<section id="education">
+					<h2>Education</h2>
+					<p>
+						<i>[Website Currently Under Active Development]</i>
+					</p>
+				</section>
+				<section id="extra-curriculars">
+					<h2>Projects and Volunteering</h2>
+					<p>
+						<i>[Website Currently Under Active Development]</i>
+					</p>
+				</section>
+			</div>
+			<nav class="section-nav">
+				<ol>
+					<li>
+						<a href="#top-of-the-page"
+							><h2><b>Background</b></h2></a
+						>
+						<ul>
+							<li><a href="#introduction">Introduction</a></li>
+							<li>
+								<a href="#early-life">Early Life</a>
+							</li>
+							<li><a href="#education">Education</a></li>
+							<li>
+								<a href="#extra-curriculars"
+									>Projects & Volunteering</a
+								>
+							</li>
+						</ul>
+					</li>
+				</ol>
+			</nav>
+		</main>
+	</body>
+</html>
