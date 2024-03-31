@@ -1,0 +1,199 @@
+@font-face {
+	font-family: "Roboto Mono ", monospace;
+	src: url("../fonts/Roboto_Mono/static/RobotoMono.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Space Mono", monospace;
+	src: url("../fonts/Space_Mono/SpaceMono-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Quicksand";
+	src: url("../fonts/Quicksand/Quicksand-VariableFont_wght.ttf")
+		format("truetype");
+	font-weight: "light";
+}
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+	background: rgb(0, 33, 43);
+	background: linear-gradient(
+		349deg,
+		rgba(0, 33, 43, 1) 0%,
+		rgb(36, 39, 51) 100%
+	);
+
+	background-attachment: fixed !important;
+	text-align: center;
+	font-size: calc(1em + 0.5vw);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	color: white;
+}
+
+/* Added CSS for main element */
+main {
+	/* Set a minimum height to allow scrolling */
+	overflow-y: scroll;
+	/* Enable vertical scrolling */
+	scrollbar-width: thin;
+	/* Width of the scrollbar */
+	scrollbar-color: transparent transparent;
+	/* Color of the scrollbar */
+}
+
+.bkg {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	padding: 2em;
+}
+
+.bkg-element {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: white;
+}
+
+.typewrite {
+	color: #fff;
+	text-decoration: none;
+	position: sticky;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+	font-family: "Space Mono", monospace;
+	font-size: calc(4em + 2.5vw);
+}
+
+.bkg-element h1 {
+	padding: 20px;
+}
+
+.content-section {
+	position: absolute;
+	top: 150% !important;
+	margin-bottom: 10em !important;
+	left: 50%;
+	min-height: 101vh !important;
+	min-width: 100vw !important;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	/* Horizontally center the inner div */
+	align-items: center;
+	/* Vertically center the inner div */
+}
+
+.section {
+	backdrop-filter: blur(10px);
+	width: 80vw;
+	margin: auto;
+	list-style: none;
+}
+
+.section__content {
+	backdrop-filter: blur(10px);
+	box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+	background: rgb(0, 33, 43);
+	background: linear-gradient(
+		349deg,
+		rgba(0, 33, 43, 1) 0%,
+		rgb(36, 39, 51) 100%
+	);
+
+	border-radius: calc(1.5em + 2.5vw);
+	overflow: hidden;
+	display: grid;
+	grid-template-areas: "text img";
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	align-items: stretch;
+
+	min-height: calc(40vh + 20vw);
+	max-height: 80vh;
+
+	display: grid;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	grid-template-columns: repeat(2, 1fr); /* Two columns */
+	/*grid-gap: 1em; /* Adjust the gap between items */
+}
+
+.section-button {
+	box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+	background: rgb(0, 60, 78);
+	background: linear-gradient(
+		349deg,
+		rgba(1, 59, 77, 0.603) 0%,
+		rgba(45, 49, 65, 0.685) 100%
+	);
+
+	color: rgba(171, 214, 255, 0.89);
+	font-size: calc(0.8em + 2.5vw);
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	height: calc(80% + 1vh);
+	width: calc(80% + 3vw);
+	border-radius: calc(0.75em + 1vw);
+	transition-duration: 0.2s;
+	border-width: 0.01em;
+	border-color: rgba(255, 255, 255, 0.034);
+	border-style: solid;
+}
+
+.section-button:hover {
+	box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+	background: linear-gradient(
+		30deg,
+		rgba(52, 109, 142, 0.4) 0%,
+		rgba(0, 162, 255, 0.4) 100%
+	);
+	color: white;
+	width: 95%;
+	height: 95%;
+	border-radius: calc(0.75em + 1vw);
+	transition-duration: 0.2s;
+	border-width: 0;
+}
+
+#portrait-icon {
+	left: 2vw; /* or float: right; */
+	top: 3vh;
+	position: absolute;
+}
+
+#portrait-icon > img {
+	height: 5em;
+	border-radius: 50%;
+	box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+	transition-duration: 0.2s;
+	opacity: 0.7;
+	filter: blur(1px);
+}
+
+#portrait-icon > img:hover {
+	height: 7em;
+	transition-duration: 0.2s;
+	opacity: 1;
+	filter: blur(0);
+}

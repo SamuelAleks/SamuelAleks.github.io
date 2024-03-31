@@ -1,0 +1,345 @@
+/* #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+ */
+
+html {
+	scroll-behavior: smooth;
+	min-height: 100%;
+	padding-bottom: 25em;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 1fr 5em;
+	width: 45%;
+	margin: 0 auto;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(32, 38, 50, 0.212);
+	backdrop-filter: blur(35px);
+	z-index: 100; /* Ensure the header is above other content */
+	transition: top 0.3s ease; /* Add a smooth transition for the header */
+	transition: top 0.5s ease-in;
+	margin: 10px 1em 1em 1em;
+	border-radius: 2vmax; /* Rounded bottom corners */
+
+	box-shadow: 5px 5px 50px 0px rgba(24, 29, 37, 0.658);
+} /* 2. Make nav sticky */
+
+main > nav {
+	position: sticky;
+	top: 12vmax;
+	align-self: start;
+}
+
+body {
+	background: rgb(0, 33, 43);
+	background: linear-gradient(
+		349deg,
+		rgb(0, 46, 59) 0%,
+		rgb(25, 56, 66) 100%
+	);
+	color: rgb(255, 255, 255);
+	padding-top: 8vmax;
+}
+
+li a {
+	color: rgb(180, 180, 180);
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 2.5vmax;
+	font-weight: 450;
+}
+
+h2 {
+	font-size: 1.75vmax;
+	font-weight: 400;
+}
+h3 {
+	font-size: 1.75vmax;
+	font-weight: 300;
+}
+h4 {
+	font-size: calc(0.65rem + 0.3vw);
+	font-weight: 300;
+	opacity: 56%;
+}
+
+p {
+	font-size: 0.9vmax;
+	color: rgb(219, 219, 219);
+	text-indent: 1.5em;
+	margin-bottom: 0rem;
+	font-weight: 300;
+	line-height: 1.85;
+}
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+li {
+	margin-left: 1rem;
+}
+
+section {
+	padding: 2em 0em;
+}
+
+.divider {
+	width: calc(100% + 5%);
+	height: 3.5px;
+	background-color: rgba(
+		255,
+		255,
+		255,
+		0.171
+	); /* Set the background color to white */
+	margin: 1em -3%; /* Negative margin to extend 5em to the left and add some margin below */
+	border-radius: 5px;
+	box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+ */
+
+.center-container {
+	text-align: center;
+	max-width: 100%;
+}
+
+.navbar {
+	--bs-navbar-padding-y: 0;
+	background-color: white;
+}
+
+#navbarNav {
+	justify-content: center;
+	padding: 1em 0 2em;
+	font-weight: 300;
+}
+
+#navbarNav li {
+	margin: 0 3vw;
+}
+
+.navbar-white-bar {
+	margin-top: 2.5vw;
+	position: absolute;
+	height: 2px;
+	background-color: rgba(255, 255, 255, 0.877);
+	transition: width 0.25s ease, left 0.25s ease;
+	border-radius: 2px;
+	margin-left: -1em;
+}
+
+.navbar-nav .nav-item.active .navbar-white-bar {
+	width: 100%;
+	left: 0;
+	bottom: -4px;
+}
+
+.nav-item.active .nav-link {
+	color: #ffffff;
+	font-weight: 500;
+}
+
+/* Style the other links in the navbar */
+.navbar-nav .nav-link {
+	font-size: 2vmax; /* Adjust the font size as needed */
+	color: #797979; /* Default color for other links */
+	transition: color 0.3s ease; /* Transition color change for other links */
+}
+
+/* Add hover and focus styles for other links */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+	color: #ffffff; /* Color when hovering or focusing other links */
+}
+
+/* Add a class to hide the header */
+.hidden-header {
+	transform: translateY(-100%);
+	transition: transform 0.3s ease;
+	display: none;
+}
+
+/* #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+ */
+
+/* Sidebar Navigation */
+.section-nav {
+	margin-top: 1em;
+	font-size: 0.8vmax;
+	font-weight: 300;
+	margin-left: 15em;
+	min-width: 25em;
+	padding: 0.1em 0.4em;
+	border-left: 1.5px solid #efefef;
+}
+
+.section-nav h2 {
+	font-size: 0.8vmax;
+	min-width: 25em;
+	margin-bottom: 0;
+	margin-left: -0.1em;
+}
+
+.section-nav ul {
+	padding-left: 0.4em;
+}
+
+.section-nav a {
+	text-decoration: none;
+	display: block;
+	padding: 0.125rem 0;
+	color: #9d9d9d;
+	transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+}
+
+/* 3. ScrollSpy active styles (see JS tab for activation) */
+.section-nav li.active > a {
+	color: #ffffff;
+	font-weight: 500;
+}
+.section-nav a:hover,
+.section-nav a:focus,
+.section-nav .active a:hover {
+	color: #2eb6ff;
+}
+
+/* #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+ */
+
+/** Poor man's reset **/
+* {
+	box-sizing: border-box;
+}
+
+#text-content {
+	padding: 2em 1em;
+}
+
+#inline-link {
+	color: rgb(255, 207, 15);
+	font-weight: 500;
+	text-decoration: underline;
+}
+
+#top-of-the-page {
+	padding: 0;
+}
+
+#programming-list {
+	position: relative;
+}
+
+#programming-list h3 {
+	margin-left: 1.5em;
+}
+
+#content-with-image {
+	position: relative;
+}
+
+#content-with-image h3 {
+	margin-left: 1.5em;
+}
+
+#php img {
+	max-width: 1.5em;
+	margin-top: 0.3em;
+}
+
+.logo-image {
+	position: absolute;
+	left: 0em;
+	margin-top: 0px;
+	max-height: 2vmax;
+	min-width: 1rem;
+	vertical-align: middle;
+	padding-right: 15px;
+}
+
+/* #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+ */
+
+@media (max-width: 1000px) {
+	.section-nav {
+		font-size: 1.8vw;
+		margin-left: 0.5em;
+		top: 9vmax;
+	}
+	.section-nav li {
+		margin-left: 6px;
+	}
+	.section-nav h2 {
+		font-size: 1.9vw;
+		margin-left: 0.5em;
+		top: 9vmax;
+		margin-bottom: 0;
+		line-height: 1;
+	}
+}
+
+@media (max-width: 1000px) {
+	body {
+		padding-top: 4em;
+	}
+}
+
+@media (max-width: 750px) {
+	body {
+		padding-top: 4em;
+	}
+}
+
+@media (max-width: 1000px) {
+	main {
+		width: 75%;
+		grid-template-columns: 1fr 10em;
+	}
+}
+
+@media (max-width: 750px) {
+	main {
+		width: 90%;
+		grid-template-columns: 10fr 9em;
+	}
+}
+
+@media (max-width: 1000px) {
+	.navbar-white-bar {
+		appearance: none;
+		width: 0;
+	}
+}
+
+/* Media query for screens below a certain width (adjust the max-width as needed) */
+@media (max-width: 1000px) {
+	/* Hide the white navbar on mobile */
+	.navbar-white-bar {
+		display: none;
+	}
+
+	/* Show the header when the mobile menu is active */
+	.navbar-collapse.show + header {
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 1000px) {
+	.center-container {
+		position: sticky;
+		padding: 1.2em 1em;
+		align-self: start;
+	}
+}
+
+@media (max-width: 1000px) {
+	.navbar {
+		--bs-navbar-padding-y: 0;
+	}
+}
