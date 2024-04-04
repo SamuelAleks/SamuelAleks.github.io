@@ -15,59 +15,6 @@
 		<link rel="stylesheet" type="text/css" href="css/content-styles.css" />
 
 		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
-
-		<script>
-			document.addEventListener("DOMContentLoaded", function () {
-				var stickyNav = document.querySelector("main > nav");
-
-				function updateStickyNav() {
-					var containerHeight = stickyNav.parentElement.clientHeight;
-
-					var scrollPosition = window.scrollY;
-					var pageHeight =
-						document.documentElement.scrollHeight -
-						window.innerHeight;
-					var percentage = (scrollPosition / pageHeight) * 150;
-
-					// Calculate values based on container dimensions
-					var inMin = 25;
-					var inMax = 100;
-					var outMin = 100;
-					var outMax = 0;
-
-					// Adjust values based on container width
-					inMin *= containerHeight / 10000; // Adjust the base value as needed
-					inMax *= containerHeight / 10000; // Adjust the base value as needed
-
-					outMin *= containerHeight / 4000; // Adjust the base value as needed
-					outMax *= containerHeight / 1000; // Adjust the base value as needed
-
-					var newPosition = map(
-						percentage,
-						inMin,
-						inMax,
-						outMin,
-						outMax
-					);
-					stickyNav.style.top = newPosition + "px";
-				}
-
-				window.addEventListener("scroll", updateStickyNav);
-				window.addEventListener("resize", updateStickyNav);
-
-				// Function to map values from one range to another
-				function map(value, inMin, inMax, outMin, outMax) {
-					return (
-						((value - inMin) * (outMax - outMin)) /
-							(inMax - inMin) +
-						outMin
-					);
-				}
-
-				// Initial update
-				updateStickyNav();
-			});
-		</script>
 	</head>
 	<body data-scroll-container>
 		<header>
@@ -117,15 +64,6 @@
 							<li class="nav-item">
 								<a
 									class="nav-link"
-									href="about.html"
-									onmouseover="expandWhiteBar(this)"
-									onmouseout="resetWhiteBar()"
-									>About</a
-								>
-							</li>
-							<li class="nav-item">
-								<a
-									class="nav-link"
 									href="github.html"
 									onmouseover="expandWhiteBar(this)"
 									onmouseout="resetWhiteBar()"
@@ -141,7 +79,45 @@
 			<script src="js/white-bar.js"></script>
 			<script src="js/header-visibility.js"></script>
 			<script src="js/scripts.js"></script>
+			<script src="js/sidebar-scroll-test.js"></script>
 			<div id="text-content">
+				<section id="volunteer-experience">
+					<h1>Volunteer Experience</h1>
+				</section>
+				<section id="volunteer1">
+					<h3>2017-Present | Calvary Baptist Church</h3>
+					<h4>Visual Technician</h4>
+					<p>
+						Migrate and maintain primary website to a new host with
+						minimal downtime.<br />
+						&emsp;Create and implement a GUI program to automate AI
+						media transcription within given workflow
+						constraints.<br />
+						&emsp;Design and implement a video recording system that
+						supports 4K video, with 2 camera operators, controlling
+						4 remote cameras, with live web streaming, recording,
+						and onsite video output replication. <br />
+						&emsp;Design and implement a lighting system including a
+						controller, splitter, wiring, and lights. <br />
+						&emsp;Design and implement a Network Attached Storage
+						solution based on given requirements. <br />
+						&emsp;Lead the technology team to ensure technology
+						enhancements and issue action items are completed.
+						<br />
+						&emsp;Cable and manage physical network infrastructure.
+						<br />
+						&emsp;Manage YouTube presence, gaining 30,000 views in
+						the span of 4 years
+						<br />
+						&emsp;Written several feasibility studies, technical
+						analyses, and budget analyses to aid with purchasing and
+						implementation decisions. <br />
+						&emsp;Diagnosed and fixed over a dozen workstations
+						Designed and built 8 workstation systems. <br />
+						&emsp;Diagnosed and fixed nearly every production
+						system, including projectors, lights, audio, and video
+					</p>
+				</section>
 				<section id="work-experience">
 					<h1>Work Experience</h1>
 					<p>
@@ -218,6 +194,14 @@
 			<nav class="section-nav">
 				<ol>
 					<li>
+						<a href="#volunteer-experience"
+							><h2><b>Volunteer Experience</b></h2>
+						</a>
+						<ul>
+							<li>
+								<a href="#volunteer1">Calvary Baptist Church</a>
+							</li>
+						</ul>
 						<a href="#work-experience"
 							><h2><b>Work Experience</b></h2>
 						</a>
