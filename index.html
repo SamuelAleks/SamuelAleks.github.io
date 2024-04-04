@@ -117,14 +117,44 @@
 				<section id="WAF-1">
 					<h2>Architecture</h2>
 					<p>
-						<i>[Website Currently Under Active Development]</i>
+						This program is written in Python, utilizing the
+						custom-tkinter library for the Graphical User Interface.
+						Whisper is a large language model developed by openai,
+						and is free to use non-commercially. The program
+						integrates this model throught the use of a python
+						package.
+					</p>
+					<p>
+						The program utilizes a config file which it references
+						at start-up to load in variables that were stored from
+						the last run. If the config file does not exist, then it
+						is created and default variables are stored. After every
+						major function of the program, the variables that are
+						currently in use are stored.
+					</p>
+					<p>
+						A custom progress bar was created that integrates the
+						whisper progress API in a method that processes it into
+						the GUI.
 					</p>
 				</section>
 				<section id="WAF-2">
 					<h2>GUI</h2>
 					<p>
-						<i>[Website Currently Under Active Development]</i>
+						As mentioned, the custom-tkinter package was chosen to
+						create the GUI. Initially, a GUI mockup was created in
+						Draw.io to have a solid concept image for the desired
+						interface design. Most of the elements present in the
+						mockup were integrated in the final application, with
+						the exception of the "Reset Status" functionality
+						(Although this may be implemented in the future).
 					</p>
+					<br /><br />
+					<figure>
+						<img src=img/ApplicationMockup.png alt="Whisper
+						Front-end Mockup" width="60%">
+						<figcaption><i>Application Mockup</i></figcaption>
+					</figure>
 				</section>
 				<section id="WAF-3">
 					<h2>Workflow</h2>
