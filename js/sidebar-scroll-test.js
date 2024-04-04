@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		var scrollPosition = window.scrollY;
 		var pageHeight =
 			document.documentElement.scrollHeight - window.innerHeight;
-		var percentage = (scrollPosition / pageHeight) * 150;
+		var percentage = (scrollPosition / pageHeight) * 3000;
 
 		// Calculate values based on container dimensions
-		var inMin = 60;
+		var inMin = 100;
 		var inMax = 100;
-		var outMin = 20;
-		var outMax = 0;
+		var outMin = 10;
+		var outMax = 50;
 
 		// Adjust values based on container width
 		//inMin *= containerHeight / 10000; // Adjust the base value as needed
